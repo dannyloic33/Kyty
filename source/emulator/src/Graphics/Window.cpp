@@ -1583,7 +1583,7 @@ static void VulkanFindPhysicalDevice(VkInstance instance, VkSurfaceKHR surface, 
 		if (!skip_device && !CheckFormat(device, VK_FORMAT_D24_UNORM_S8_UINT, true, VK_FORMAT_FEATURE_DEPTH_STENCIL_ATTACHMENT_BIT))
 		{
 			printf("Format VK_FORMAT_D24_UNORM_S8_UINT cannot be used as depth buffer\n");
-			skip_device = true;
+			skip_device = false;
 		}
 
 		if (!skip_device &&
