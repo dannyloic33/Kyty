@@ -1556,10 +1556,10 @@ static void VulkanFindPhysicalDevice(VkInstance instance, VkSurfaceKHR surface, 
 			}
 		}
 
-		if (!skip_device && !CheckFormat(device, VK_FORMAT_R8G8B8A8_SRGB, false, VK_FORMAT_FEATURE_BLIT_SRC_BIT))
+		if (!skip_device && !CheckFormat(device, VK_FORMAT_R8G8B8A8_UNO, false, VK_FORMAT_FEATURE_BLIT_SRC_BIT))
 		{
 			printf("Format VK_FORMAT_R8G8B8A8_SRGB cannot be used as transfer source\n");
-			skip_device = true;
+			skip_device = false;
 		}
 
 		if (!skip_device && !CheckFormat(device, VK_FORMAT_D32_SFLOAT, true, VK_FORMAT_FEATURE_DEPTH_STENCIL_ATTACHMENT_BIT))
