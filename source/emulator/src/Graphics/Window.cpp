@@ -1269,7 +1269,7 @@ static void VulkanGetSurfaceCapabilities(VkPhysicalDevice physical_device, VkSur
 	r->format_srgb_bgra32 = false;
 	for (const auto& f: r->formats)
 	{
-		if (f.format == VK_FORMAT_B8G8R8A8_SRGB && f.colorSpace == VK_COLOR_SPACE_SRGB_NONLINEAR_KHR)
+		if (f.format == VK_FORMAT_B8G8R8A8_UNORM && f.colorSpace == VK_COLOR_SPACE_SRGB_NONLINEAR_KHR)
 		{
 			r->format_srgb_bgra32 = true;
 			break;
