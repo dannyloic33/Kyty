@@ -13,8 +13,8 @@ namespace Kyty::Libs::Graphics {
 enum class VideoOutBufferFormat : uint64_t
 {
 	Unknown,
-	R8G8B8A8Srgb,
-	B8G8R8A8Srgb,
+	R8G8B8A8Unorm,
+	B8G8R8A8Unorm,
 };
 
 class VideoOutBufferObject: public GpuObject
