@@ -1489,7 +1489,7 @@ VulkanFramebuffer* FramebufferCache::CreateFramebuffer(RenderColorInfo* color, R
 
 	VulkanImage* vulkan_buffer =
 	    (with_color ? color->vulkan_buffer
-	                : CreateDummyBuffer(VK_FORMAT_B8G8R8A8_SRGB, depth->vulkan_buffer->extent.width, depth->vulkan_buffer->extent.height));
+	                : CreateDummyBuffer(VK_FORMAT_B8G8R8A8_UNORM, depth->vulkan_buffer->extent.width, depth->vulkan_buffer->extent.height));
 
 	VkAttachmentDescription attachments[2];
 	attachments[0].flags          = 0;
