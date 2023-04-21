@@ -883,19 +883,19 @@ static int register_buffers_internal(VideoOutConfig* ctx, int set_id, int start_
 	{
 		if (attribute2->pixel_format == 0x8000000000000000ULL)
 		{
-			format = Graphics::VideoOutBufferFormat::B8G8R8A8Srgb;
+			format = Graphics::VideoOutBufferFormat::B8G8R8A8Unorm;
 		} else if (attribute2->pixel_format == 0x8000000022000000ULL)
 		{
-			format = Graphics::VideoOutBufferFormat::R8G8B8A8Srgb;
+			format = Graphics::VideoOutBufferFormat::R8G8B8A8Unorm;
 		}
 	} else
 	{
 		if (attribute->pixel_format == 0x80000000)
 		{
-			format = Graphics::VideoOutBufferFormat::B8G8R8A8Srgb;
+			format = Graphics::VideoOutBufferFormat::B8G8R8A8Unorm;
 		} else if (attribute->pixel_format == 0x80002200)
 		{
-			format = Graphics::VideoOutBufferFormat::R8G8B8A8Srgb;
+			format = Graphics::VideoOutBufferFormat::R8G8B8A8Unorm;
 		}
 	}
 
