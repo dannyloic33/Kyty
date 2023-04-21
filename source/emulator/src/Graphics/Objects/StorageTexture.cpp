@@ -23,7 +23,7 @@ static VkFormat get_texture_format(uint32_t dfmt, uint32_t nfmt, uint32_t fmt)
 	{
 		if (nfmt == 9 && dfmt == 10)
 		{
-			return VK_FORMAT_R8G8B8A8_SRGB;
+			return VK_FORMAT_R8G8B8A8_UNORM;
 		}
 		if (nfmt == 0 && dfmt == 10)
 		{
@@ -81,7 +81,7 @@ static bool CheckFormat(GraphicContext* ctx, VkImageCreateInfo* image_info)
 			printf("replace VK_FORMAT_R8G8B8A8_SRGB => VK_FORMAT_R8G8B8A8_UNORM [%s]\n", (!result ? "FAIL" : "SUCCESS"));
 			return result;
 		}
-		if (image_info->format == VK_FORMAT_B8G8R8A8_SRGB)
+		if (image_info->format == VK_FORMAT_B8G8R8A8_UNORM)
 		{
 			// TODO() convert SRGB -> LINEAR in shader
 			image_info->format = VK_FORMAT_B8G8R8A8_UNORM;
@@ -105,7 +105,7 @@ static bool CheckSwizzle(GraphicContext* /*ctx*/, VkImageCreateInfo* image_info,
 		}
 
 		if (components->r == VK_COMPONENT_SWIZZLE_B && components->g == VK_COMPONENT_SWIZZLE_G && components->b == VK_COMPONENT_SWIZZLE_R &&
-		    components->a == VK_COMPONENT_SWIZZLE_A && image_info->format == VK_FORMAT_R8G8B8A8_SRGB)
+		    components->a == VK_COMPONENT_SWIZZLE_A && image_info->format == VK_FORMAT_R8G8B8A8_UNORM)
 		{
 			printf("replace VK_FORMAT_R8G8B8A8_SRGB => VK_FORMAT_B8G8R8A8_SRGB\n");
 
@@ -113,7 +113,7 @@ static bool CheckSwizzle(GraphicContext* /*ctx*/, VkImageCreateInfo* image_info,
 			components->g      = VK_COMPONENT_SWIZZLE_G;
 			components->b      = VK_COMPONENT_SWIZZLE_B;
 			components->a      = VK_COMPONENT_SWIZZLE_A;
-			image_info->format = VK_FORMAT_B8G8R8A8_SRGB;
+			image_info->format = VK_FORMAT_B8G8R8A8_UNORM;
 			return true;
 		}
 
