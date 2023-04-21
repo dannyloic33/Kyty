@@ -3831,7 +3831,7 @@ static void FindRenderDepthInfo(uint64_t submit_id, CommandBuffer* /*buffer*/, c
 			case 0: r->format = VK_FORMAT_UNDEFINED; break;
 			case 1: /*r->format = VK_FORMAT_S8_UINT*/ EXIT("Unsupported format: VK_FORMAT_S8_UINT\n"); break;
 			case 2: r->format = VK_FORMAT_D16_UNORM; break;
-			case 3: r->format = VK_FORMAT_D24_UNORM_S8_UINT; break;
+			case 3: /*r->format = VK_FORMAT_D24_UNORM_S8_UINT; break;*/
 			case 6: r->format = VK_FORMAT_D32_SFLOAT; break;
 			case 7: r->format = VK_FORMAT_D32_SFLOAT_S8_UINT; break;
 			default: EXIT("unknown z and stencil format: %u, %u\n", z.z_info.format, z.stencil_info.format);
